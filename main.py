@@ -11,7 +11,7 @@ mail_to     = "sashaioda12345@gmail.com"  # получатель
 mail_text   = 'Hello!!!' # текст письма
 mail_subj   = 'Тестовое письмо' # заголовок письма
 mail_coding = 'windows-1251'
-attach_file = '/home/mrRobot/Документы/lol.png' # прикрепляемый файл
+attach_file = '/home/mrRobot/Документы/lol.png' # путь к файлу
 
 smtp_server = "smtp.gmail.com"
 smtp_port   = 587
@@ -40,7 +40,7 @@ if(os.path.exists(attach_file) and os.path.isfile(attach_file)):
     multi_msg.attach(attachment)
 else:
     if(attach_file.lstrip() != ""):
-        print("Файл для атача не найден - " + attach_file)
+        print("File not found - " + attach_file)
 
 smtp = smtplib.SMTP(smtp_server, smtp_port)
 smtp.ehlo()
